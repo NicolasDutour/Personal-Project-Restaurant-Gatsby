@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { FaAlignRight } from "react-icons/fa"
 
 import NavLinks from "./NavLinks"
 
@@ -11,6 +12,12 @@ const NavbarContainer = styled.nav`
   width: 70%;
   height: 100%;
   margin: 0 auto;
+`
+
+const StyledMenu = styled(FaAlignRight)`
+  font-size: 2rem;
+  color: ${props => props.theme.primary};
+  cursor: pointer;
 `
 
 const StyledLogo = styled(Link)`
@@ -28,10 +35,12 @@ const StyledLogo = styled(Link)`
 `
 
 const Navbar = ({ siteTitle }) => {
+  const [mobile, setMobile] = useState(false)
+
   return (
     <NavbarContainer>
       <StyledLogo to="/"> {siteTitle} </StyledLogo>
-      <NavLinks />
+      {!mobile ? <StyledMenu /> : <NavLinks />}
     </NavbarContainer>
   )
 }
