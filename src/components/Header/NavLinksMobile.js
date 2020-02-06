@@ -9,6 +9,7 @@ const NavLinksMobileWrapper = styled.div`
   left: 0;
   background-color: white;
   width: 100%;
+  z-index: 100;
 
   @media (min-width: 768px) {
     display: none;
