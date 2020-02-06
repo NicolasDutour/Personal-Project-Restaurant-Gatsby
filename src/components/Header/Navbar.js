@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import { FaAlignRight } from "react-icons/fa"
 
 import NavLinks from "./NavLinks"
+import NavLinksMobile from "./NavLinksMobile"
 
 const NavbarContainer = styled.nav`
   display: flex;
@@ -12,6 +13,10 @@ const NavbarContainer = styled.nav`
   width: 70%;
   height: 100%;
   margin: 0 auto;
+
+  @media (max-width: 767px) {
+    width: 95%;
+  }
 `
 
 const StyledMenu = styled(FaAlignRight)`
@@ -44,8 +49,9 @@ const Navbar = ({ siteTitle }) => {
   return (
     <NavbarContainer>
       <StyledLogo to="/"> {siteTitle} </StyledLogo>
-      <StyledMenu />
+      <StyledMenu onClick={() => setOpen(!open)} />
       <NavLinks />
+      {open && <NavLinksMobile />}
     </NavbarContainer>
   )
 }
