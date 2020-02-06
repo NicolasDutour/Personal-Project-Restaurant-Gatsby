@@ -1,6 +1,7 @@
 import React from "react"
-
 import styled from "styled-components"
+
+import NavLinks from "./NavLinks"
 
 const NavbarContainer = styled.nav`
   display: flex;
@@ -13,7 +14,7 @@ const Navbar = ({ siteTitle }) => {
   return (
     <NavbarContainer>
       <div> {siteTitle} </div>
-      <div>navlinks</div>
+      <NavLinks />
     </NavbarContainer>
   )
 }
