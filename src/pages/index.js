@@ -70,9 +70,9 @@ const IndexPage = () => {
             cuisine ouverte rend l’espace si convivial.
           </Description>
           <Description>
-            C’est dans un esprit de famille que Patrice Jeanne, le directeur du
-            restaurant accueille ses convives. En coulisses, la brigade
-            supervisée par Eric Frechon vous régale.
+            Notre mission est de vous faire découvrir une cuisine diverses et
+            variées en nous inspirant des plats le splus connu dans le monde
+            entier.
           </Description>
           <ImageContainer>
             {data.allFile.edges.map((edge, index) => (
