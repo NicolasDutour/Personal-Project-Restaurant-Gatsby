@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Restaurant`,
-    description: `Restaurant qui propose principalement des pizzas`,
+    title: `Rest'O`,
+    description: `Restaurant qui propose toute sorte de plats, entrées, desserts, boissons`,
     author: `Nicolas Dutour`,
   },
   plugins: [
