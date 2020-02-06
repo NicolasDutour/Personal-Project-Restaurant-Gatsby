@@ -18,6 +18,10 @@ const StyledMenu = styled(FaAlignRight)`
   font-size: 2rem;
   color: ${props => props.theme.primary};
   cursor: pointer;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `
 
 const StyledLogo = styled(Link)`
@@ -35,12 +39,13 @@ const StyledLogo = styled(Link)`
 `
 
 const Navbar = ({ siteTitle }) => {
-  const [mobile, setMobile] = useState(false)
+  const [open, setOpen] = useState(false)
 
   return (
     <NavbarContainer>
       <StyledLogo to="/"> {siteTitle} </StyledLogo>
-      {!mobile ? <StyledMenu /> : <NavLinks />}
+      <StyledMenu />
+      <NavLinks />
     </NavbarContainer>
   )
 }
