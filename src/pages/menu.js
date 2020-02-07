@@ -139,6 +139,14 @@ const Menu = () => {
     )
   }
 
+  const getPastas = () => {
+    setItems(
+      data.allContentfulMenuItem.edges.filter(
+        item => item.node.category === "Pasta"
+      )
+    )
+  }
+
   return (
     <Layout>
       <SEO title="Menu" />
@@ -148,6 +156,7 @@ const Menu = () => {
           <Button onClick={getAllItems}>Tout</Button>
           <Button onClick={getPizzas}>Pizza</Button>
           <Button onClick={getBurgers}>Burger</Button>
+          <Button onClick={getPastas}>Pâtes</Button>
         </ButtonsWrapper>
         <ItemsWrapper>
           {items.map((edge, index) => {
