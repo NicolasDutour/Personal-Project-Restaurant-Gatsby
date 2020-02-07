@@ -70,8 +70,8 @@ const IndexPage = () => {
             cuisine ouverte rend l’espace si convivial.
           </Description>
           <Description>
-            Notre mission est de vous faire découvrir une cuisine diverses et
-            variées en nous inspirant des plats le splus connu dans le monde
+            Notre mission est de vous faire découvrir une cuisine diverse et
+            variée en nous inspirant des plats les plus connus dans le monde
             entier.
           </Description>
           <ImageContainer>
