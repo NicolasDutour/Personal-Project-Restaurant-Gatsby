@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/Seo/Seo"
 import styled from "styled-components"
@@ -10,6 +10,26 @@ import Title from "../components/Shared/Title"
 const ContainerMenu = styled.div`
   width: 85%;
   margin: 0 auto;
+`
+
+const ButtonsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+`
+
+const Button = styled.div`
+  font-size: 1.8rem;
+  margin: 0 20px;
+  border-bottom: 2px solid ${props => props.theme.primary};
+  padding: 5px 10px;
+  background-color: white;
+  cursor: pointer;
+
+  @media (max-width: 992px) {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+  }
 `
 
 const ItemsWrapper = styled.div`
@@ -75,9 +95,10 @@ const Price = styled.div`
 const Menu = () => {
   const data = useStaticQuery(graphql`
     query getAllItemMenuQuery {
-      allContentfulMenuItem {
+      allContentfulMenuItem(sort: { fields: category, order: ASC }) {
         edges {
           node {
+            category
             dishPrice
             dishTitle
             dishIngredients
@@ -92,13 +113,44 @@ const Menu = () => {
     }
   `)
 
+  const [items, setItems] = useState([])
+
+  useEffect(() => {
+    setItems(data.allContentfulMenuItem.edges)
+  }, [data.allContentfulMenuItem.edges])
+
+  const getAllItems = () => {
+    setItems(data.allContentfulMenuItem.edges)
+  }
+
+  const getPizzas = () => {
+    setItems(
+      data.allContentfulMenuItem.edges.filter(
+        item => item.node.category === "Pizza"
+      )
+    )
+  }
+
+  const getBurgers = () => {
+    setItems(
+      data.allContentfulMenuItem.edges.filter(
+        item => item.node.category === "Burger"
+      )
+    )
+  }
+
   return (
     <Layout>
       <SEO title="Menu" />
       <Title name="Menu" />
       <ContainerMenu>
+        <ButtonsWrapper>
+          <Button onClick={getAllItems}>Tout</Button>
+          <Button onClick={getPizzas}>Pizza</Button>
+          <Button onClick={getBurgers}>Burger</Button>
+        </ButtonsWrapper>
         <ItemsWrapper>
-          {data.allContentfulMenuItem.edges.map((edge, index) => {
+          {items.map((edge, index) => {
             return (
               <Item key={index}>
                 <ImageMenu>
