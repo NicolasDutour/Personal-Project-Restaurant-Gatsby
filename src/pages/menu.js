@@ -12,32 +12,6 @@ const ContainerMenu = styled.div`
   margin: 0 auto;
 `
 
-const ButtonsWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-`
-
-const Button = styled.button`
-  font-size: 1.8rem;
-  margin: 0 20px;
-  border: 2px solid ${props => props.theme.primary};
-  padding: 5px 10px;
-  border-radius: 5px;
-  background-color: white;
-  cursor: pointer;
-
-  @media (max-width: 992px) {
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-    border-bottom: 2px solid ${props => props.theme.primary};
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-radius: 0;
-  }
-`
-
 const ItemsWrapper = styled.div`
   display: flex;
   justify-content: space-around;
@@ -123,11 +97,6 @@ const Menu = () => {
       <SEO title="Menu" />
       <Title name="Menu" />
       <ContainerMenu>
-        <ButtonsWrapper>
-          <Button>Tout</Button>
-          <Button>Pizza</Button>
-          <Button>Burger</Button>
-        </ButtonsWrapper>
         <ItemsWrapper>
           {data.allContentfulMenuItem.edges.map((edge, index) => {
             return (
