@@ -28,7 +28,6 @@ const NavLinks = () => {
       <StyledLink to="/">Home</StyledLink>
       <StyledLink to="/about">About</StyledLink>
       <StyledLink to="/menu">Menu</StyledLink>
-      <StyledLink to="/contact">Contact</StyledLink>
     </NavlinksWrapper>
   )
 }

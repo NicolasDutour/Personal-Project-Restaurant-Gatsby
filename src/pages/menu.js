@@ -90,7 +90,7 @@ const Price = styled.div`
 
 const Menu = () => {
   const data = useStaticQuery(graphql`
-    query getItemMenuQuery {
+    query getAllItemMenuQuery {
       allContentfulMenuItem {
         edges {
           node {
@@ -114,7 +114,7 @@ const Menu = () => {
       <Title name="Menu" />
       <ContainerMenu>
         <ButtonsWrapper>
-          <Button>All</Button>
+          <Button>Tout</Button>
           <Button>Pizza</Button>
           <Button>Burger</Button>
         </ButtonsWrapper>
