@@ -26,7 +26,6 @@ const NavLinks = () => {
   return (
     <NavlinksWrapper>
       <StyledLink to="/">Home</StyledLink>
-      <StyledLink to="/about">About</StyledLink>
       <StyledLink to="/menu">Menu</StyledLink>
     </NavlinksWrapper>
   )

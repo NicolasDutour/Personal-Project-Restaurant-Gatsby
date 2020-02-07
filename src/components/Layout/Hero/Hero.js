@@ -81,9 +81,7 @@ const BackgroundSection = ({ className }) => (
           <Overlay />
           <HeroDetails>
             <Title> Bienvenue chez Rest'O </Title>
-            <StyledLink fade to="/menu">
-              Menu
-            </StyledLink>
+            <StyledLink to="/menu">Menu</StyledLink>
           </HeroDetails>
         </BackgroundImage>
       )

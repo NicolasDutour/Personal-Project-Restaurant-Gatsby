@@ -43,6 +43,7 @@ const IndexPage = () => {
         edges {
           node {
             childImageSharp {
+              id
               fixed(width: 400) {
                 ...GatsbyImageSharpFixed_withWebp
               }
@@ -75,8 +76,8 @@ const IndexPage = () => {
             entier.
           </Description>
           <ImageContainer>
-            {data.allFile.edges.map((edge, index) => (
-              <ImageItem>
+            {data.allFile.edges.map(edge => (
+              <ImageItem key={edge.node.childImageSharp.id}>
                 <Img fixed={edge.node.childImageSharp.fixed} />
               </ImageItem>
             ))}
