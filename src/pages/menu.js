@@ -26,6 +26,16 @@ const Button = styled.button`
   border-radius: 5px;
   background-color: white;
   cursor: pointer;
+
+  @media (max-width: 992px) {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    border-bottom: 2px solid ${props => props.theme.primary};
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
 `
 
 const ItemsWrapper = styled.div`
